@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/jarvis-core",
+    "crates/jarvis-cli",
+    "crates/jarvis-app",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = []
+license = "UNLICENSED"
+
+# Спільні залежності декларуються тут і підключаються в крейтах
+# через `dep-name = { workspace = true }`, щоб версії ніколи не розходились
+# між крейтами workspace (див. jarvis-core-architecture-spec.md, §5.2 —
+# відмінність між "механізмом розширення" і "механізмом компіляції").
+[workspace.dependencies]
